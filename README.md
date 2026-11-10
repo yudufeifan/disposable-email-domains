@@ -27,6 +27,22 @@ Use our **high-speed Cloudflare Worker API** on RapidAPI:
 
 ---
 
+## 🛠️ Offline Local Check Scripts
+
+Run instant checks locally without hitting any network limits:
+
+### Python
+```bash
+python verify_email.py user@example.com
+```
+
+### Node.js
+```bash
+node verify_email.js user@example.com
+```
+
+---
+
 ## 💻 Quick Integration (API Example)
 
 ### cURL
@@ -35,3 +51,43 @@ curl --request GET \
   --url 'https://disposable-fake-email-detector.p.rapidapi.com/?email=test%40mailinator.com' \
   --header 'x-rapidapi-host: disposable-fake-email-detector.p.rapidapi.com' \
   --header 'x-rapidapi-key: YOUR_RAPIDAPI_KEY'
+```
+
+### Python
+```python
+import requests
+
+url = "https://disposable-fake-email-detector.p.rapidapi.com/"
+querystring = {"email": "test@mailinator.com"}
+
+headers = {
+    "x-rapidapi-key": "YOUR_RAPIDAPI_KEY",
+    "x-rapidapi-host": "disposable-fake-email-detector.p.rapidapi.com"
+}
+
+response = requests.get(url, headers=headers, params=querystring)
+print(response.json())
+```
+
+### Response Example
+```json
+{
+  "email": "test@mailinator.com",
+  "domain": "mailinator.com",
+  "is_valid_format": true,
+  "is_disposable": true,
+  "has_mx_records": true,
+  "is_safe_to_deliver": false,
+  "checked_at": "2026-11-08T11:31:23.095Z"
+}
+```
+
+---
+
+## 🤝 Contributing
+
+Found a disposable domain that isn't on the list? Pull requests and issues are welcome!
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
