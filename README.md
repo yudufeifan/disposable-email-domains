@@ -32,6 +32,6 @@ Use our **high-speed Cloudflare Worker API** on RapidAPI:
 ### cURL
 ```bash
 curl --request GET \
-  --url '[https://disposable-fake-email-detector.p.rapidapi.com/?email=test%40mailinator.com](https://disposable-fake-email-detector.p.rapidapi.com/?email=test%40mailinator.com)' \
+  --url 'https://disposable-fake-email-detector.p.rapidapi.com/?email=test%40mailinator.com' \
   --header 'x-rapidapi-host: disposable-fake-email-detector.p.rapidapi.com' \
   --header 'x-rapidapi-key: YOUR_RAPIDAPI_KEY'
